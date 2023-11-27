@@ -1,0 +1,180 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6914,        172]
+NotebookOptionsPosition[      5561,        146]
+NotebookOutlinePosition[      6037,        164]
+CellTagsIndexPosition[      5994,        161]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.903601679090481*^9, 3.9036016854251013`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"01203c2a-ec16-4505-885e-b38bf28dc62b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"<<", "Anim`"}], ";"}]], "Input",
+ CellChangeTimes->{{3.9036016867480173`*^9, 3.90360169114468*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"b10b279c-7967-4e8c-b88a-17111524facb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"setProjectDirectory", "[", "\"\<test\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.903601694002315*^9, 3.903601709776589*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"01d39830-efcf-43f9-b308-e9fb5b32dc47"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"setProjectBackground", "[", 
+   RowBox[{"RGBColor", "[", 
+    RowBox[{"0.97", " ", ",", " ", "0.99", " ", ",", " ", "0.97"}], "]"}], 
+   "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.903669308295864*^9, 3.903669326725065*^9}, {
+  3.903669425854843*^9, 3.90366943126233*^9}, {3.903671929133626*^9, 
+  3.9036719310289173`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"58e12aba-409d-4d21-98d1-e7a8f8bb264e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pulsatingSphere", " ", "=", " ", 
+   RowBox[{"animFunction", "[", "\[IndentingNewLine]", 
+    RowBox[{"Function", "[", "\[IndentingNewLine]", 
+     RowBox[{"t", " ", ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"Red", " ", ",", " ", 
+        RowBox[{"Sphere", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", " ", ",", " ", "0", " ", ",", " ", "0"}], "}"}], " ", 
+          ",", " ", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"Sin", "[", 
+            RowBox[{"t", " ", "2", " ", "\[Pi]"}], "]"}], "]"}]}], "]"}]}], 
+       "}"}]}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.903601720490054*^9, 3.9036017990978823`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"fd53017c-8825-484d-8cfe-7c17d5b1db8a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pulsatingCircle", " ", "=", " ", 
+   RowBox[{"animFunction", "[", "\[IndentingNewLine]", 
+    RowBox[{"Function", "[", "\[IndentingNewLine]", 
+     RowBox[{"t", " ", ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"Red", " ", ",", " ", 
+        RowBox[{"Circle", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", " ", ",", " ", "0"}], "}"}], " ", ",", " ", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"Sin", "[", 
+            RowBox[{"t", " ", "2", " ", "\[Pi]"}], "]"}], "]"}]}], "]"}]}], 
+       "}"}]}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.903602745002302*^9, 3.903602758569469*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"6bb6ec77-787e-4325-8840-48486c94e26f"],
+
+Cell[BoxData[
+ RowBox[{"exportScene", "[", 
+  RowBox[{
+  "Graphics3D", " ", ",", " ", "\"\<pulsatingSphere\>\"", " ", ",", " ", 
+   "2.0", " ", ",", " ", "pulsatingSphere"}], "]"}]], "Input",
+ CellChangeTimes->{{3.903601815673565*^9, 3.903601844081723*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"9b38ccc7-292d-4c23-9e93-421e6dad0151"],
+
+Cell[BoxData[
+ RowBox[{"exportScene", "[", 
+  RowBox[{
+  "Graphics", " ", ",", " ", "\"\<pulsatingCircle\>\"", " ", ",", " ", "2.0", 
+   " ", ",", " ", "pulsatingCircle"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9036029763063602`*^9, 3.9036029847304*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"4e193af0-cc38-49ae-bff7-f602f1a90e51"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"joinScenes", "[", 
+   RowBox[{"\"\<testJoin\>\"", " ", ",", " ", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<pulsatingSphere\>\"", " ", ",", " ", "\"\<pulsatingCircle\>\""}], 
+     "}"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.903603006349288*^9, 3.903603046315626*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"26a00bf4-2412-4aad-9b0d-9cff77c75b98"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pulsatingFadingSphere", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"mapTimed", "[", 
+     RowBox[{"Function", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"t", " ", ",", " ", "g"}], "}"}], " ", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Opacity", "[", 
+          RowBox[{"1", " ", "-", " ", "t"}], "]"}], " ", ",", " ", "g"}], 
+        "}"}]}], "]"}], "]"}], "[", "pulsatingSphere", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.903603958331224*^9, 3.9036039824325314`*^9}, {
+  3.9036040133047047`*^9, 3.903604033313224*^9}, {3.903604105709044*^9, 
+  3.903604131901454*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"82820b01-2bf7-49c0-b61d-3fc017dd61d9"],
+
+Cell[BoxData[
+ RowBox[{"exportScene", "[", 
+  RowBox[{
+  "Graphics3D", " ", ",", " ", "\"\<pulsatingFadingSphere\>\"", " ", ",", " ",
+    "2.0", " ", ",", " ", "pulsatingFadingSphere"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9036041489296913`*^9, 3.9036041534736347`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"17e25ca7-3c6a-4fea-a748-f117514a749a"]
+},
+WindowSize->{704.25, 389.25},
+WindowMargins->{{-714.75, Automatic}, {10.5, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+Magnification:>0.75 Inherited,
+FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"b89a8797-004a-4210-ba73-6b93a4c51f0e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 269, 5, 24, "Input",ExpressionUUID->"01203c2a-ec16-4505-885e-b38bf28dc62b"],
+Cell[830, 27, 212, 4, 22, "Input",ExpressionUUID->"b10b279c-7967-4e8c-b88a-17111524facb"],
+Cell[1045, 33, 245, 4, 22, "Input",ExpressionUUID->"01d39830-efcf-43f9-b308-e9fb5b32dc47"],
+Cell[1293, 39, 438, 9, 25, "Input",ExpressionUUID->"58e12aba-409d-4d21-98d1-e7a8f8bb264e"],
+Cell[1734, 50, 850, 19, 111, "Input",ExpressionUUID->"fd53017c-8825-484d-8cfe-7c17d5b1db8a"],
+Cell[2587, 71, 817, 18, 111, "Input",ExpressionUUID->"6bb6ec77-787e-4325-8840-48486c94e26f"],
+Cell[3407, 91, 335, 6, 25, "Input",ExpressionUUID->"9b38ccc7-292d-4c23-9e93-421e6dad0151"],
+Cell[3745, 99, 333, 6, 25, "Input",ExpressionUUID->"4e193af0-cc38-49ae-bff7-f602f1a90e51"],
+Cell[4081, 107, 391, 9, 25, "Input",ExpressionUUID->"26a00bf4-2412-4aad-9b0d-9cff77c75b98"],
+Cell[4475, 118, 727, 18, 25, "Input",ExpressionUUID->"82820b01-2bf7-49c0-b61d-3fc017dd61d9"],
+Cell[5205, 138, 352, 6, 25, "Input",ExpressionUUID->"17e25ca7-3c6a-4fea-a748-f117514a749a"]
+}
+]
+*)
+
